@@ -24,8 +24,11 @@ Este es un proyecto desarrollado con **React.js**, pensado como una aplicación 
 npm install
 
 npm i react-router-dom
+
 npm i react-bootstrap bootstrap
+
 npm fontawesome
+
 npm axios
 
 
