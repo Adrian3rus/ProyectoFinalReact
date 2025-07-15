@@ -1,0 +1,53 @@
+/* Menú hamburguesa desplegado: fondo gris semitransparente, columna y alineado a la derecha */
+.navbar-collapse {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 1rem;
+    
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/* Links dentro del menú: texto blanco, alineado a la derecha y ancho completo para clic */
+.navbar-collapse .nav-link {
+    color: #fff !important;
+    text-align: right;
+    width: 100%;
+    padding-right: 1rem;
+}
+
+.navbar-collapse .nav-link:hover {
+    color: #ddd !important;
+}
+
+/* Contenedor de botones / links fuera del Nav dentro del colapso */
+.navbar-collapse>div.d-flex {
+    justify-content: flex-end;
+    width: 100%;
+}
+
+/* Estilos para pantallas grandes (lg = 992px en Bootstrap) */
+@media (min-width: 992px) {
+    .navbar-collapse {
+        background-color: transparent !important;
+        /* quitar fondo gris */
+        flex-direction: row !important;
+        /* menú horizontal */
+        align-items: center !important;
+        padding: 0 !important;
+        border-radius: 0 !important;
+    }
+
+    .navbar-collapse .nav-link {
+        width: auto !important;
+        text-align: left !important;
+        padding-right: 0 !important;
+        color: white !important;
+    }
+
+    .navbar-collapse>div.d-flex {
+        justify-content: flex-start !important;
+        width: auto !important;
+    }
+}

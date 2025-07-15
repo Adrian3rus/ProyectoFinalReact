@@ -1,0 +1,188 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Enlaces */
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+/* Reset y estructura principal */
+html,
+body,
+#root {
+  /* height: 100%; */
+  margin: 0;
+  padding: 0;
+}
+
+/* Layout flexible para header + footer */
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* El contenido ocupa el espacio disponible */
+.main-content {
+  flex: 1;
+}
+
+/* Asegura que el header no tape el contenido */
+.body-offset {
+  margin-top: 80px;
+  /* altura del header */
+  margin-bottom: 90px;
+  /* altura del footer */
+  min-height: calc(100vh - 160px);
+}
+
+/* Estilo del footer */
+footer.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #222;
+  z-index: 1000;
+  
+}
+
+/* --- AJUSTE IMPORTANTE --- */
+/* Quitamos flex y centrado del body para evitar problemas de layout */
+body {
+  min-width: 320px;
+}
+
+/* Card blanco con texto oscuro para formularios y demás */
+.card {
+  background-color: white;
+  color: black;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.sticky-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1050;
+  height: 80px;
+  /* ajusta según el alto real de tu header */
+  background-color: #212529;
+  /* para que no sea transparente */
+}
+
+.body-offset {
+  margin-top: 80px;
+  /* mismo valor que la altura del header */
+}
+
+/* Botones */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  color: white;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Modo claro */
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  a:hover {
+    color: #747bff;
+  }
+
+  button {
+    background-color: #f9f9f9;
+    color: black;
+  }
+}
+
+
+/* Contenedor de toda la app */
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Contenido principal: deja espacio para header y footer */
+.body-offset {
+  margin-top: 80px;
+  /* Altura del header */
+  margin-bottom: 90px;
+  /* Altura del footer */
+  min-height: calc(100vh - 170px);
+}
+
+/* Header fijo */
+.sticky-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1050;
+  height: 80px;
+  background-color: #212529;
+}
+
+/* Footer fijo abajo */
+footer.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #222;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+/* Oculta el footer si la pantalla es muy baja (como cuando se abre el teclado en celular) */
+@media (max-height: 500px) {
+  footer.footer {
+    display: none;
+  }
+}
