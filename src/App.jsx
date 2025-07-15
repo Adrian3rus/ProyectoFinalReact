@@ -7,6 +7,7 @@ import Login from './Components/Login';
 import CrudProductos from './Components/CrudProductos';
 import Carrito from './Components/Carrito';
 import { CartProvider } from './Components/CartContext';
+import ConsultaProductos from './Components/ConsultaProductos';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/crud" element={<CrudProductos />} />
               <Route path="/carrito" element={<Carrito />} />
+              <Route path="/Productos" element={<ConsultaProductos />} />
               {/* Agregá más rutas si querés */}
             </Routes>
           </main>

@@ -3,13 +3,14 @@ import { Container, Table, Button } from 'react-bootstrap';
 import { CartContext } from './CartContext';
 
 const Carrito = () => {
-  const { carrito, setCarrito } = useContext(CartContext);
+  const { carrito, eliminarDelCarrito } = useContext(CartContext);
 
-  const eliminarDelCarrito = (id) => {
-    setCarrito(prev => prev.filter(producto => producto.id !== id));
+  // Función para obtener precio, con fallback a 10 si no hay price
+  const obtenerPrecio = (item) => {
+    return item.price ? Number(item.price) : 10;
   };
 
-  const total = carrito.reduce((acc, item) => acc + Number(item.price) * item.cantidad, 0);
+  const total = carrito.reduce((acc, item) => acc + obtenerPrecio(item) * item.cantidad, 0);
 
   if (carrito.length === 0) {
     return (
@@ -35,10 +36,10 @@ const Carrito = () => {
         <tbody>
           {carrito.map((item) => (
             <tr key={item.id}>
-              <td>{item.title}</td>
-              <td>${Number(item.price).toFixed(2)}</td>
+              <td>{item.titulo || item.title}</td>
+              <td>${obtenerPrecio(item).toFixed(2)}</td>
               <td>{item.cantidad}</td>
-              <td>${(Number(item.price) * item.cantidad).toFixed(2)}</td>
+              <td>${(obtenerPrecio(item) * item.cantidad).toFixed(2)}</td>
               <td>
                 <Button
                   variant="danger"

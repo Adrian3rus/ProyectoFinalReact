@@ -4,7 +4,7 @@ import { Table, Button, Form, Modal, Alert, Row, Col } from 'react-bootstrap';
 const API_URL = 'https://686ef62c91e85fac429f6915.mockapi.io/productos/products';
 
 const plataformasDisponibles = ['PC', 'PlayStation', 'Xbox', 'Switch'];
-const generosDisponibles = ['Acción', 'Aventura', 'Estrategia', 'Deportes', 'RPG'];
+const generosDisponibles = ['Acción', 'Aventura', 'Estrategia', 'Deportes', 'RPG', 'Pelea'];
 
 const CrudProductos = () => {
   const [productos, setProductos] = useState([]);
