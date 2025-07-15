@@ -28,10 +28,5 @@ npm i react-bootstrap bootstrap
 npm fontawesome
 npm axios
 
-src/
-├── Components/        # Componentes reutilizables (Header, Footer, Carrito, etc.)
-├── Assets/            # Imágenes, estilos, fuentes
-├── App.js             # Componente principal
-├── index.js           # Punto de entrada principal
 
 Desarrollado por Adrianerus Aprendiendo a programar 
