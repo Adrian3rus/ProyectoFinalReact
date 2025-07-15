@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { CartContext } from './CartContext';
 import './Header.css'; // Importá el CSS actualizado
-import logo from './img/logo.png';
+import logo from './img/Logo.png';
 
 const Header = () => {
   const { carrito } = useContext(CartContext);
